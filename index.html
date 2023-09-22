@@ -39,11 +39,8 @@
 			z-index: 100;
 			background: white;
 			position: absolute;
-			top: 10vh;
-			bottom: 10vh;
-			left: 10vw;
-			right: 10vw;
-
+			top: 5vh;
+			right: 5vh;
 		}
 
 		p {
@@ -121,7 +118,7 @@
 		<div id="close-button-container">
 			<button id="close-button" onclick="closeDialog()" title="Close Ads">X</button>
 		</div>
-		This is where the ad goes!
+		Close Ads
 	</div>
 	<div id="content"></div>
 	<!--
@@ -142,9 +139,13 @@
 		function closeDialog() {
 			var dialog = document.getElementById("ads");
 			dialog.style.display = "none";
+			var canvas = document.getElementsByTagName("canvas")[0];
+			canvas.style.zIndex = 9999999;
 		}
 	</script>
 	<script type="module" src="js/main.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4166585995870471"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
