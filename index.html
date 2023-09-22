@@ -85,6 +85,13 @@
 			font-weight: bold;
 		}
 
+		#close-button-container {
+			float: right;
+			padding-right: 20px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
 		.blue {
 			background: linear-gradient(skyblue, blue, black, black, darkblue);
 			border-color: darkblue;
@@ -110,7 +117,12 @@
 </head>
 
 <body>
-	<div id="ads">That's why babe!</div>
+	<div id="ads">
+		<div id="close-button-container">
+			<button id="close-button" onclick="closeDialog()" title="Close Ads">X</button>
+		</div>
+		This is where the ad goes!
+	</div>
 	<div id="content"></div>
 	<!--
 			This is an implementation of the green code seen in The Matrix film and video game franchise.
@@ -126,6 +138,12 @@
 
 			For more information, please visit: https://github.com/Rezmason/matrix
 		 -->
+	<script>
+		function closeDialog() {
+			var dialog = document.getElementById("ads");
+			dialog.style.display = "none";
+		}
+	</script>
 	<script type="module" src="js/main.js"></script>
 </body>
 
