@@ -41,9 +41,10 @@ document.body.onload = async () => {
     canvas.style.display = "none";
     document.body.appendChild(notice);
     document.querySelector(".blue.pill").addEventListener("click", async () => {
-      config.suppressWarnings = true;
-      urlParams.set("suppressWarnings", true);
-      history.replaceState({}, "", "?" + unescape(urlParams.toString()));
+      config.suppressWarning = true;
+      // urlParams.set("name", myParam);
+      // urlParams.set("suppressWarnings", true);
+      history.replaceState({}, "", "?" + urlParams.toString());
       (await solution).default(canvas, config);
       canvas.style.display = "unset";
       document.body.removeChild(notice);
