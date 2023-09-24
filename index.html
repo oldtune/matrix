@@ -35,14 +35,6 @@
 			height: 100vh;
 		}
 
-		#ads {
-			z-index: 100;
-			background: white;
-			position: absolute;
-			top: 5vh;
-			right: 5vh;
-		}
-
 		p {
 			color: hsl(108, 90%, 70%);
 			text-shadow: hsl(108, 90%, 40%) 1px 0 10px;
@@ -82,12 +74,6 @@
 			font-weight: bold;
 		}
 
-		#close-button-container {
-			float: right;
-			padding-right: 20px;
-			font-size: 20px;
-			font-weight: bold;
-		}
 
 		.blue {
 			background: linear-gradient(skyblue, blue, black, black, darkblue);
@@ -110,12 +96,34 @@
 			border-color: crimson;
 			color: white;
 		}
+
+		#name-label {
+			color: white;
+		}
+
+		#container {
+			height: 100px;
+			margin-top: 100px;
+		}
+
+		#name {
+			width: 70%;
+		}
+
+		#begin-button {
+			margin-top: 50px;
+			height: 100px;
+		}
 	</style>
 </head>
 
 <body>
 	<div id="container">
-		<button id="begin-button" onclick="goToMatrix()" title="Go To Matrix">Ấn vô đây ik!</button>
+		<label id="name-label">Nhập gì đó ý nghĩa ik</label>
+		<input id="name" />
+		<div>
+			<button id="begin-button" onclick="goToMatrix()" title="Go To Matrix">Nhập xong thì ấn vô đây ik!</button>
+		</div>
 	</div>
 	<!--
 			This is an implementation of the green code seen in The Matrix film and video game franchise.
@@ -133,7 +141,8 @@
 		 -->
 	<script>
 		function goToMatrix() {
-			window.location.href = "/matrix.html";
+			const name = document.getElementById("name").value;
+			window.location.href = `/matrix.html?name=${name}?version=3d`;
 		}
 	</script>
 	<!-- <script type="module" src="js/main.js"></script> -->

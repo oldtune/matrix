@@ -30,13 +30,13 @@ document.body.onload = async () => {
     ["webgpu"].includes(config.renderer?.toLowerCase());
   const solution = import(`./${useWebGPU ? "webgpu" : "regl"}/main.js`);
 
-  if (isRunningSwiftShader() && !config.suppressWarnings) {
+  if (true) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get("name");
     const notice = document.createElement("notice");
     notice.innerHTML = `<div class="notice">
-		<p>Wake up, Neo... you've got hardware acceleration disabled.</p>
-		<p>This project will still run, incredibly, but at a noticeably low framerate.</p>
-		<button class="blue pill">Plug me in</button>
-		<a class="red pill" target="_blank" href="https://www.google.com/search?q=chrome+enable+hardware+acceleration">Free me</a>
+    <p>${myParam}<p>
+    <button class="blue pill">Xem ik nè!</button>
 		`;
     canvas.style.display = "none";
     document.body.appendChild(notice);
